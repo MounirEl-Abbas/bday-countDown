@@ -1,0 +1,198 @@
+/*
+=============== 
+Fonts
+===============
+*/
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+  /* dark shades of primary color*/
+  --clr-primary-1: hsl(205, 86%, 17%);
+  --clr-primary-2: hsl(205, 77%, 27%);
+  --clr-primary-3: hsl(205, 72%, 37%);
+  --clr-primary-4: hsl(205, 63%, 48%);
+  /* primary/main color */
+  --clr-primary-5: #49a6e9;
+  /* lighter shades of primary color */
+  --clr-primary-6: hsl(205, 89%, 70%);
+  --clr-primary-7: hsl(205, 90%, 76%);
+  --clr-primary-8: hsl(205, 86%, 81%);
+  --clr-primary-9: hsl(205, 90%, 88%);
+  --clr-primary-10: hsl(205, 100%, 96%);
+  /* darkest grey - used for headings */
+  --clr-grey-1: hsl(209, 61%, 16%);
+  --clr-grey-2: hsl(211, 39%, 23%);
+  --clr-grey-3: hsl(209, 34%, 30%);
+  --clr-grey-4: hsl(209, 28%, 39%);
+  /* grey used for paragraphs */
+  --clr-grey-5: hsl(210, 22%, 49%);
+  --clr-grey-6: hsl(209, 23%, 60%);
+  --clr-grey-7: hsl(211, 27%, 70%);
+  --clr-grey-8: hsl(210, 31%, 80%);
+  --clr-grey-9: hsl(212, 33%, 89%);
+  --clr-grey-10: hsl(210, 36%, 96%);
+  --clr-white: #fff;
+  --clr-red-dark: hsl(360, 67%, 44%);
+  --clr-red-light: hsl(360, 71%, 66%);
+  --clr-green-dark: hsl(125, 67%, 44%);
+  --clr-green-light: hsl(125, 71%, 66%);
+  --clr-black: #222;
+  --ff-primary: "Roboto", sans-serif;
+  --ff-secondary: "Open Sans", sans-serif;
+  --transition: all 0.3s linear;
+  --spacing: 0.25rem;
+  --radius: 0.5rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --max-width: 1170px;
+  --fixed-width: 620px;
+}
+/*
+=============== 
+Global Styles
+===============
+*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  background-color: var(--clr-grey-10);
+}
+.grocery-list-container {
+  position: relative;
+  margin: 15vh auto 0 auto;
+  max-width: 600px;
+  min-height: 250px;
+  background-color: white;
+  box-shadow: var(--dark-shadow);
+  border-radius: 10px;
+  padding: 60px 0 30px 0;
+}
+#action-response {
+  text-align: center;
+  font-family: var(--ff-secondary);
+  font-size: 14px;
+  color: var(--clr-grey-3);
+  margin: 0 50px;
+  border-radius: 5px;
+  letter-spacing: 3px;
+}
+h2 {
+  text-align: center;
+  color: var(--clr-grey-2);
+  font-family: var(--ff-primary);
+  letter-spacing: 4px;
+  margin: 16px 0;
+}
+
+/* Input field */
+.input-submit {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+input {
+  background-color: var(--clr-grey-10);
+  font-family: var(--ff-secondary);
+  width: 85%;
+  padding: 7px 15px;
+  border: none;
+  border-radius: 8px 0 0 8px;
+  font-size: 16px;
+  color: var(--clr-grey-5);
+}
+button[type="submit"] {
+  width: 15%;
+  background-color: var(--clr-primary-8);
+  border-radius: 0 8px 8px 0;
+  border: none;
+  font-size: 16px;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+button[type="submit"]:hover {
+  color: white;
+  background: var(--clr-primary-5);
+}
+/* Grocery items */
+.grocery-items {
+  width: 85%;
+  margin: 40px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.item {
+  display: flex;
+  padding: 5px 10px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  transition: var(--transition);
+  letter-spacing: 2px;
+  color: var(--clr-grey-2);
+  font-size: 18px;
+}
+.item:hover {
+  background: var(--clr-grey-10);
+  color: var(--clr-grey-6);
+}
+.item > p {
+  width: 90%;
+}
+.item-btns {
+  width: 10%;
+}
+.item-btns > i:first-child {
+  color: var(--clr-green-dark);
+  cursor: pointer;
+  transition: var(--transition);
+  margin-right: 5px;
+}
+.item-btns > i:first-child:hover {
+  color: rgb(3, 104, 3);
+}
+.item-btns > i:last-child {
+  color: var(--clr-red-dark);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.item-btns > i:last-child:hover {
+  color: rgb(85, 1, 1);
+}
+
+/* Footer/ Clear Items button */
+.clear-btn-container {
+  height: 30px;
+}
+#clear-items {
+  color: var(--clr-red-light);
+  font-family: var(--ff-secondary);
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  letter-spacing: 3px;
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+#clear-items:hover {
+  color: var(--clr-red-dark);
+}
